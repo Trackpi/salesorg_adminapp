@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
             child: Container(color: lightSidebarColor),
           ),
 
-          // Expanded widget for Main Dashboard
+          // Expanded widget for Main Dashboard Area
           Expanded(
             flex: 5,
             child: Column(
