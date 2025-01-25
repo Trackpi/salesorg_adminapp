@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:salesorg_adminapp/view/home_page/navigation_screen.dart';
+import 'package:salesorg_adminapp/routes/routes.dart';
+
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -14,11 +15,8 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) => const MaterialApp(
         debugShowCheckedModeBanner: false,
-
-
-
-        home: NavigationScreen(), 
-        
+        initialRoute: Approutes.navScreen,
+        onGenerateRoute: Approutes.generateRoute,
       ),
     );
   }

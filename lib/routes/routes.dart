@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:salesorg_adminapp/view/dashboard/dash_board.dart';
+import '../view/home_page/navigation_screen.dart';
 
 class Approutes {
+  static const String navScreen = '/';
 
-static const String dashboard = '/';
-
-static Route<dynamic> generateRoute(RouteSettings settings) {  
-  switch (settings.name) {
-    case dashboard:
-      return MaterialPageRoute(builder: (_) => DashBoard());
-    default:
-      return MaterialPageRoute(builder: (_) => Scaffold(body: Center(child: Text('No route defined for ${settings.name}'))));
-  } 
-
-
-
-
-
-
-}}
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case navScreen:
+        return MaterialPageRoute(builder: (_) => NavigationScreen());
+      default:
+        return MaterialPageRoute(
+            builder: (_) => Scaffold(
+                body: Center(
+                    child: Text('No route defined for ${settings.name}'))));
+    }
+  }
+}
