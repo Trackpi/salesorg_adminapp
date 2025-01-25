@@ -1,8 +1,8 @@
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
-
-
-
+import 'package:salesorg_adminapp/constants/constants.dart';
+import 'package:salesorg_adminapp/gen/assets.gen.dart';
+import 'package:sizer/sizer.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -12,14 +12,11 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
+  SideMenuController sideMenuController = SideMenuController();
 
-SideMenuController sideMenuController = SideMenuController();
+  PageController pageController = PageController();
 
-PageController pageController = PageController();
-
-
-
- @override
+  @override
   void initState() {
     sideMenuController.addListener((index) {
       pageController.jumpToPage(index);
@@ -27,56 +24,50 @@ PageController pageController = PageController();
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-appBar: AppBar(
-
-
-
-
-),
-
-
-
-body: Row(children: [
-
-
-SideMenu(
-  
-  
-  
-  style: SideMenuStyle(
-
-displayMode: SideMenuDisplayMode.open,
-
-hoverColor: Colors.blue,
-
-
-
-  ),
-  
-  
-  items: [
-
-
-
-
-
-], controller: sideMenuController,
-
-
-
-
-
-
-)
-
-
-
-
-],),
+      body: Row(
+        children: [
+          SideMenu(
+            title: Column(
+              children: [
+                gap,
+                SizedBox(
+                  width: double.infinity,
+                  height: 10.h,
+                  child: Center(
+                    child: Image.asset(
+                      Assets.pngs.trackPi.path,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                gap,
+              ],
+            ),
+            controller: sideMenuController,
+            style: SideMenuStyle(
+              backgroundColor: sideMenuColor,
+              displayMode: SideMenuDisplayMode.open,
+            ),
+            items: [
+              SideMenuItem(
+                title: 'Home',
+                icon: Icon(Icons.home),
+              ),
+              SideMenuItem(
+                title: 'Profile',
+                icon: Icon(Icons.person),
+              ),
+              SideMenuItem(
+                title: 'Settings',
+                icon: Icon(Icons.settings),
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
