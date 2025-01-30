@@ -7,7 +7,10 @@ class DrawerTab extends StatelessWidget {
   final int tabId;
   final bool isChild;
   final Color? tileColor;
+  final Color? selectionColor;
+  final TextStyle? textStyle;
 
+  final BorderRadiusGeometry? borderRadius;
   const DrawerTab({
     super.key,
     required this.title,
@@ -15,6 +18,9 @@ class DrawerTab extends StatelessWidget {
     this.icon,
     this.isChild = false,
     this.tileColor,
+    this.selectionColor,
+    this.borderRadius,
+    this.textStyle,
   });
 
   @override
@@ -25,21 +31,24 @@ class DrawerTab extends StatelessWidget {
           return Container(
             decoration: BoxDecoration(
               color: activeTab == tabId
-                  ? Colors.blue
+                  ? (selectionColor ?? Colors.blue)
                   : tileColor ?? Colors.blueGrey[900],
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
+              borderRadius: borderRadius ??
+                  BorderRadius.all(
+                    Radius.circular(10),
+                  ),
             ),
             child: ListTile(
               leading: icon != null ? Icon(icon, color: Colors.white) : null,
               title: Text(
                 title,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight:
-                      activeTab == tabId ? FontWeight.bold : FontWeight.normal,
-                ),
+                style: textStyle ??
+                    TextStyle(
+                      color: Colors.white,
+                      fontWeight: activeTab == tabId
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                    ),
               ),
               contentPadding:
                   isChild ? EdgeInsets.only(left: 32.0) : EdgeInsets.zero,

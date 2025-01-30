@@ -26,32 +26,25 @@ class NavigationScreen extends StatelessWidget {
                 width: 10.w,
               ),
               gapLarge,
-              DrawerTab(title: 'DashBoard', tabId: 1)
+              DrawerTab(
+                
+                title: 'DashBoard',
+                tabId: 1,
+                tileColor: Colors.transparent,
+              )
             ],
-          )
-,
-
-   Expanded(
-              child: Center(
-                child: ValueListenableBuilder<int>(
-                  valueListenable: SideDrawer.activeTabNotifier,
-                  builder: (context, activeTab, child) {
-                    // return Text(
-                    //   'Selected Tab: $activeTab',
-                    //   style: TextStyle(fontSize: 24),
-                    // );
-
-                    return DrawerRoutes.pageMap[activeTab] ?? Container();
-                  },
-                ),
+          ),
+          Expanded(
+            child: Center(
+              child: ValueListenableBuilder<int>(
+                valueListenable: SideDrawer.activeTabNotifier,
+                builder: (context, activeTab, child) {
+                  return DrawerRoutes.pageMap[activeTab] ?? Container();
+                },
               ),
             ),
-
-
+          ),
         ],
-
-
-
       ),
     );
   }
