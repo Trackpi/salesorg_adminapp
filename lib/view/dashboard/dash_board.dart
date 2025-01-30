@@ -6,7 +6,7 @@ class DashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    logMan.e("Dashboard");
+    logMan.d("Tapped : Dashboard");
     return Scaffold(
       body: Center(
         child: Text("Dashboard"),

@@ -9,8 +9,11 @@ class DrawerTab extends StatelessWidget {
   final Color? tileColor;
   final Color? selectionColor;
   final TextStyle? textStyle;
-
+  final MainAxisAlignment? mainAxisAlignment;
   final BorderRadiusGeometry? borderRadius;
+  final EdgeInsetsGeometry? textPadding;
+  final TextStyle? selectionTextStyle;
+
   const DrawerTab({
     super.key,
     required this.title,
@@ -21,6 +24,9 @@ class DrawerTab extends StatelessWidget {
     this.selectionColor,
     this.borderRadius,
     this.textStyle,
+    this.mainAxisAlignment,
+    this.textPadding,
+    this.selectionTextStyle,
   });
 
   @override
@@ -40,15 +46,19 @@ class DrawerTab extends StatelessWidget {
             ),
             child: ListTile(
               leading: icon != null ? Icon(icon, color: Colors.white) : null,
-              title: Text(
-                title,
-                style: textStyle ??
-                    TextStyle(
-                      color: Colors.white,
-                      fontWeight: activeTab == tabId
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                    ),
+              title: Padding(
+                padding: textPadding ?? EdgeInsets.all(8),
+                child: Row(
+                  mainAxisAlignment:
+                      mainAxisAlignment ?? MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style:
+                          tabId == activeTab ? selectionTextStyle : textStyle,
+                    )
+                  ],
+                ),
               ),
               contentPadding:
                   isChild ? EdgeInsets.only(left: 32.0) : EdgeInsets.zero,
