@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:logger/logger.dart';
 import 'package:sizer/sizer.dart';
 
 elayed({Duration duration = const Duration(seconds: 2)}) async {
@@ -13,12 +14,12 @@ const double paddingXXL = 32;
 const double paddingSmall = 2;
 const double paddingTiny = 1;
 
-final gap = Gap(padding.h);
-final gapLarge = Gap(paddingLarge.h);
-final gapXL = Gap(paddingXL.h);
-final gapXXL = Gap(paddingXXL.h);
-final gapSmall = Gap(paddingSmall.h);
-final gapTiny = Gap(paddingTiny.h);
+final gap = Gap(padding.sp);
+final gapLarge = Gap(paddingLarge.sp);
+final gapXL = Gap(paddingXL.sp);
+final gapXXL = Gap(paddingXXL.sp);
+final gapSmall = Gap(paddingSmall.sp);
+final gapTiny = Gap(paddingTiny.sp);
 
 List<BoxShadow> constShadow = [
   BoxShadow(
@@ -29,4 +30,18 @@ List<BoxShadow> constShadow = [
   ),
 ];
 
+//Colors
 Color sideMenuColor = Color(0xff3784DC).withValues(alpha: .3);
+Color tileSelectionColor = Color(0xff3784DC);
+
+//logger
+
+Logger logMan = Logger(
+  printer: PrettyPrinter(
+      methodCount: 0,
+      errorMethodCount: 8,
+      lineLength: 50,
+      colors: true,
+      printEmojis: true,
+      dateTimeFormat: DateTimeFormat.dateAndTime),
+);
