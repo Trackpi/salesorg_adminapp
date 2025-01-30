@@ -27,10 +27,11 @@ class NavigationScreen extends StatelessWidget {
               ),
               gapLarge,
               DrawerTab(
-                
+
                 title: 'DashBoard',
                 tabId: 1,
                 tileColor: Colors.transparent,
+                textStyle: TextStyle(),
               )
             ],
           ),
