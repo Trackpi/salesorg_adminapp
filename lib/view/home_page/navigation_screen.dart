@@ -32,6 +32,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       body: Row(
         children: [
           SideMenu(
+            alwaysShowFooter: true,
             title: Column(
               children: [
                 gapSmall,
@@ -50,8 +51,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
             ),
             controller: sideMenuController,
             style: SideMenuStyle(
+              itemOuterPadding: EdgeInsets.zero,
+
               itemInnerSpacing: padding,
-              
+
               itemBorderRadius: BorderRadius.circular(paddingLarge),
               unselectedTitleTextStyle:
                   TextStyle().inter40018.copyWith(fontSize: 12.sp),
@@ -67,6 +70,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
             ),
             items: [
               SideMenuItem(
+                
                 title: 'Dashboard',
                 onTap: (index, _) => sideMenuController.changePage(index),
               ),
