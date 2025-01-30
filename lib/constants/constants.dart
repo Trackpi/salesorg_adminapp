@@ -45,3 +45,8 @@ Logger logMan = Logger(
       printEmojis: true,
       dateTimeFormat: DateTimeFormat.dateAndTime),
 );
+
+//Textstyle
+TextStyle unSelectedTextStyle = TextStyle(fontWeight: FontWeight.w500);
+TextStyle selectionTextStyle =
+    TextStyle(fontWeight: FontWeight.w600, color: Colors.white);
