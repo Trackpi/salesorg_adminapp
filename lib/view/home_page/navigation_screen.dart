@@ -59,11 +59,17 @@ class NavigationScreen extends StatelessWidget {
                       borderRadius: borderRadius,
                       selectionTextStyle:
                           selectionTextStyle.copyWith(color: Colors.white),
+                    ),
+                    DrawerTab(
+                      title: "Company & Product\n Management",
+                      tabId: 4,
+                      isChild: true,
+                      tileColor: CustomColors.unSelectedTileColor,
+                      borderRadius: borderRadius,
+                      selectionTextStyle:
+                          selectionTextStyle.copyWith(color: Colors.white),
                     )
                   ]),
-
-
-                
             ],
           ),
           Expanded(
