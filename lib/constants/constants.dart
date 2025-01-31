@@ -31,9 +31,20 @@ List<BoxShadow> constShadow = [
 ];
 
 //Colors
-Color sideMenuColor = Color(0xff3784DC).withValues(alpha: .3);
-Color tileSelectionColor = Color(0xff3784DC);
+class CustomColors {
 
+
+
+
+
+
+
+static Color  unSelectedTileColor = Colors.transparent;
+
+static Color sideMenuColor = Color(0xff3784DC).withValues(alpha: .3);
+ static  Color tileSelectionColor = Color(0xff3784DC);
+
+}
 //logger
 
 Logger logMan = Logger(
@@ -50,3 +61,5 @@ Logger logMan = Logger(
 TextStyle unSelectedTextStyle = TextStyle(fontWeight: FontWeight.w500);
 TextStyle selectionTextStyle =
     TextStyle(fontWeight: FontWeight.w600, color: Colors.white);
+
+BorderRadius borderRadius =  BorderRadius.circular(10.sp);

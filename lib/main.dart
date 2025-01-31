@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) => MaterialApp(
         theme: ThemeData(
-            fontFamily: 'Inter',
-            useMaterial3: true,
-            colorScheme: ColorScheme.fromSeed(seedColor: tileSelectionColor)),
+          fontFamily: 'Inter',
+          useMaterial3: true,
+          colorScheme:
+              ColorScheme.fromSeed(seedColor: CustomColors.tileSelectionColor),
+        ),
         debugShowCheckedModeBanner: false,
         initialRoute: Approutes.navScreen,
         onGenerateRoute: Approutes.generateRoute,

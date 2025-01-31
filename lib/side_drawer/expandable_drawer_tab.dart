@@ -1,7 +1,13 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:salesorg_adminapp/constants/constants.dart';
+
 import 'package:salesorg_adminapp/side_drawer/side_drawer.dart';
 
 class ExpandableDrawerTab extends StatelessWidget {
+  final ExpansionTileController _expController = ExpansionTileController();
+
+  final EdgeInsetsGeometry? titlePadding;
   final String title;
   final Widget? leading;
   final int tabId;
@@ -27,9 +33,10 @@ class ExpandableDrawerTab extends StatelessWidget {
   final AnimationStyle? expansionAnimationStyle;
   final Widget? trailing;
   final Alignment? expandedAlignment;
-  const ExpandableDrawerTab({
+  ExpandableDrawerTab({
     super.key,
     // this.expansionTileBackgroundColor,
+    this.titlePadding,
     required this.title,
     this.leading,
     required this.tabId,
@@ -59,9 +66,12 @@ class ExpandableDrawerTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+      controller: _expController,
+      maintainState: true,
+      enableFeedback: true,
       textColor: expandedTextColor ?? Colors.white,
       trailing: trailing,
-      tilePadding: EdgeInsets.zero,
+      tilePadding: titlePadding ?? EdgeInsets.zero,
       expansionAnimationStyle:
           expansionAnimationStyle ?? AnimationStyle.noAnimation,
       showTrailingIcon: showTrailingIcon ?? true,
