@@ -8,6 +8,10 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     logMan.d("Tapped : Dashboard");
     return Scaffold(
+     appBar: ,
+     
+     
+     
       body: Center(
         child: Text("Dashboard"),
       ),

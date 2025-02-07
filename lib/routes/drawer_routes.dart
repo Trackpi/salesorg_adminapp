@@ -7,18 +7,18 @@ class DrawerRoutes {
   static final Map<int, Widget> pageMap = {
     1: DashBoard(),
     3: AdminManagement(),
-    4: UserManagement(),
+    // 4: UserManagement(),
   5:CompanyProductManagement() ,
 
-    6: CompanyProfile(),
+    // 6: CompanyProfile(),
 
-    7:TeamMapping(),
-    8:RevenueManagement(),
-    9: TicketManagement(),
-    10: FormManagement(),
-    11: VoucherCodeManagement(),
-    12: TerminationManagement(),
-    13: AnnounceMentManagement(),
+    // 7:TeamMapping(),
+    // 8:RevenueManagement(),
+    // 9: TicketManagement(),
+    // 10: FormManagement(),
+    // 11: VoucherCodeManagement(),
+    // 12: TerminationManagement(),
+    // 13: AnnounceMentManagement(),
 
     
   };
