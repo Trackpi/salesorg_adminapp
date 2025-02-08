@@ -10,6 +10,5 @@ class AppTheme {
       fontFamily: 'Inter',
       scaffoldBackgroundColor: CustomColors.snowWhite,
       appBarTheme: AppBarTheme(
-          toolbarHeight: 8.h,
-          backgroundColor: CustomColors.sideMenuColor.withValues(alpha: .3)));
+          toolbarHeight: 10.h, backgroundColor: CustomColors.sideMenuColor));
 }

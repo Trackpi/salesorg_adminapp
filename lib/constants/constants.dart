@@ -35,30 +35,7 @@ class CustomColors {
   static Color snowWhite = Color(0xffF5F5F5);
   static Color unSelectedTileColor = Colors.transparent;
 
-  static Color 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  sideMenuColor = Color(0xff3784DC).withValues(alpha: .3);
+  static Color sideMenuColor = Color(0xff3784DC).withValues(alpha: .2);
   static Color tileSelectionColor = Color(0xff3784DC);
 }
 //logger
