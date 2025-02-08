@@ -8,7 +8,7 @@ class DrawerRoutes {
     1: DashBoard(),
     3: AdminManagement(),
     // 4: UserManagement(),
-  5:CompanyProductManagement() ,
+    4: CompanyProductManagement(),
 
     // 6: CompanyProfile(),
 
@@ -19,7 +19,5 @@ class DrawerRoutes {
     // 11: VoucherCodeManagement(),
     // 12: TerminationManagement(),
     // 13: AnnounceMentManagement(),
-
-    
   };
 }
