@@ -52,10 +52,12 @@ class DrawerTab extends StatelessWidget {
                   mainAxisAlignment:
                       mainAxisAlignment ?? MainAxisAlignment.start,
                   children: [
-                    Text(
-                      title,
-                      style:
-                          tabId == activeTab ? selectionTextStyle : textStyle,
+                    Expanded(
+                      child: Text(
+                        title,
+                        style:
+                            tabId == activeTab ? selectionTextStyle : textStyle,
+                      ),
                     )
                   ],
                 ),

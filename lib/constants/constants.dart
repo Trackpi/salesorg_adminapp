@@ -32,18 +32,11 @@ List<BoxShadow> constShadow = [
 
 //Colors
 class CustomColors {
+  static Color snowWhite = Color(0xffF5F5F5);
+  static Color unSelectedTileColor = Colors.transparent;
 
-
-
-
-
-
-
-static Color  unSelectedTileColor = Colors.transparent;
-
-static Color sideMenuColor = Color(0xff3784DC).withValues(alpha: .3);
- static  Color tileSelectionColor = Color(0xff3784DC);
-
+  static Color sideMenuColor = Color(0xff3784DC).withValues(alpha: .3);
+  static Color tileSelectionColor = Color(0xff3784DC);
 }
 //logger
 
@@ -58,8 +51,9 @@ Logger logMan = Logger(
 );
 
 //Textstyle
-TextStyle unSelectedTextStyle = TextStyle(fontWeight: FontWeight.w500);
-TextStyle selectionTextStyle =
-    TextStyle(fontWeight: FontWeight.w600, color: Colors.white);
+TextStyle unSelectedTextStyle =
+    TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp);
+TextStyle selectionTextStyle = TextStyle(
+    fontWeight: FontWeight.w600, color: Colors.white, fontSize: 14.sp);
 
-BorderRadius borderRadius =  BorderRadius.circular(10.sp);
+BorderRadius borderRadius = BorderRadius.circular(10.sp);

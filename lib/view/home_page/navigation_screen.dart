@@ -52,22 +52,24 @@ class NavigationScreen extends StatelessWidget {
                       unSelectedTextStyle.copyWith(color: Colors.black),
                   children: [
                     DrawerTab(
+                      textStyle: TextStyle(fontSize: 12.sp),
                       title: 'Admin Management',
                       tabId: 3,
                       isChild: true,
                       tileColor: CustomColors.unSelectedTileColor,
                       borderRadius: borderRadius,
-                      selectionTextStyle:
-                          selectionTextStyle.copyWith(color: Colors.white),
+                      selectionTextStyle: selectionTextStyle.copyWith(
+                          color: Colors.white, fontSize: 12.sp),
                     ),
                     DrawerTab(
+                      textStyle: TextStyle(fontSize: 12.sp),
                       title: "Company & Product\n Management",
                       tabId: 4,
                       isChild: true,
                       tileColor: CustomColors.unSelectedTileColor,
                       borderRadius: borderRadius,
-                      selectionTextStyle:
-                          selectionTextStyle.copyWith(color: Colors.white),
+                      selectionTextStyle: selectionTextStyle.copyWith(
+                          color: Colors.white, fontSize: 12.sp),
                     )
                   ]),
             ],
@@ -77,7 +79,8 @@ class NavigationScreen extends StatelessWidget {
               child: ValueListenableBuilder<int>(
                 valueListenable: SideDrawer.activeTabNotifier,
                 builder: (context, activeTab, child) {
-                  return DrawerRoutes.pageMap[activeTab] ?? Container();
+                  return DrawerRoutes.pageMap[activeTab] ??
+                      DrawerRoutes.pageMap[1]!;
                 },
               ),
             ),
